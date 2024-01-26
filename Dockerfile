@@ -1,11 +1,12 @@
-FROM python:3.9-slim-buster
+FROM public.ecr.aws/lambda/python:3.9
 
-WORKDIR /app
+WORKDIR /var/task
 
-COPY ./requirements.txt /app/
-
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /app
+COPY main.py .
+COPY src/ src/
 
-CMD ["python", "main.py"]
+CMD ["main.lambda_handler"]
+

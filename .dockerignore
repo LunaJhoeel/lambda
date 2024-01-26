@@ -114,3 +114,6 @@ Scripts/
 .vscode
 **/*.pyc
 **/__pycache__
+
+# Markdowns
+*.md
