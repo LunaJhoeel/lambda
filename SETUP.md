@@ -11,14 +11,14 @@ pip install -r requirements.txt
 python main.py
 
 ### Build image
-docker build -t lambda .
+docker build -t lambda_image .
 
 ### Create container
-docker run lambda
+docker run --name lambda_container lambda_image
 
 ### Remove container
 docker rm -f [container_id]
 
 ### Remove image
-docker rmi lambda
+docker rmi lambda_image
 
